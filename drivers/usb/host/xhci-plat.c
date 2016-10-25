@@ -22,7 +22,7 @@
 #include "xhci.h"
 
 #ifdef CONFIG_USB_XHCI_MTK
-#include <xhci-mtk.h>
+#include "xhci-mtk.h"
 #endif
 
 #include "xhci-mvebu.h"
@@ -182,6 +182,9 @@ static int xhci_plat_probe(struct platform_device *pdev)
 		ret = clk_prepare_enable(clk);
 		if (ret)
 			goto put_hcd;
+	} else if (PTR_ERR(clk) == -EPROBE_DEFER) {
+		ret = -EPROBE_DEFER;
+		goto put_hcd;
 	}
 
 	if (of_device_is_compatible(pdev->dev.of_node,
