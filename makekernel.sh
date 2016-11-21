@@ -1,6 +1,6 @@
 #!/bin/bash
-DEFCONFIG=DarkSense_defconfig
-KERNEL=DarkSense
+DEFCONFIG=cm_p9000_defconfig
+KERNEL=cyanogenmod
 if [  -f $KERNEL ]; then
 	rm $KERNEL
 fi
