@@ -578,6 +578,7 @@ ssize_t mt_gpio_store_pin(struct device *dev, struct device_attribute *attr,
 			  const char *buf, size_t count)
 {
 	int pin;
+	/*int ret;*/
 #ifdef MTK_MT6306_SUPPORT
 	int group, on;
 #endif
