@@ -20,7 +20,6 @@
 
 /* register Value */
 #define MPU6050_PWRM2_ACCEL_DISABLE		0x38
-#define MPU6050_FIXED_DEVID         0x68	/* or 0x69 */
 
 					   /* delay(ms) */
 #define MPU6050_BW_260HZ            0x00	/* 0 */
